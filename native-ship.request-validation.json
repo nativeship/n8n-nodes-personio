@@ -1,0 +1,4146 @@
+{
+  "schemaVersion": 1,
+  "fixtures": [
+    {
+      "operationId": "createAbsencePeriod",
+      "method": "POST",
+      "path": "/absence-periods",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "absence_type_id",
+            "inputName": "absence_type_id",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "end_date",
+            "inputName": "end_date",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "person_id",
+            "inputName": "person_id",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "start_date",
+            "inputName": "start_date",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "end_date",
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "name": "person_id",
+            "type": "string"
+          },
+          {
+            "name": "start_date",
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "status",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "end_date",
+          "id",
+          "person_id",
+          "start_date",
+          "status"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "createAbsencePeriod",
+        "method": "POST",
+        "path": "/absence-periods",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "POST",
+          "url": "=/absence-periods",
+          "query": [],
+          "body": [
+            {
+              "name": "absence_type_id",
+              "source": "additionalFields"
+            },
+            {
+              "name": "end_date",
+              "source": "additionalFields"
+            },
+            {
+              "name": "person_id",
+              "source": "additionalFields"
+            },
+            {
+              "name": "start_date",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "end_date",
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "name": "id",
+              "type": "string"
+            },
+            {
+              "name": "person_id",
+              "type": "string"
+            },
+            {
+              "name": "start_date",
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "name": "status",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "end_date",
+            "id",
+            "person_id",
+            "start_date",
+            "status"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "deleteAbsencePeriod",
+      "method": "DELETE",
+      "path": "/absence-periods/{id}",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "deleteAbsencePeriod",
+        "method": "DELETE",
+        "path": "/absence-periods/{id}",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "DELETE",
+          "url": "=/absence-periods/{{$parameter[\"id\"]}}",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getAbsenceBreakdowns",
+      "method": "GET",
+      "path": "/absence-periods/{id}/breakdowns",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "getAbsenceBreakdowns",
+        "method": "GET",
+        "path": "/absence-periods/{id}/breakdowns",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/absence-periods/{{$parameter[\"id\"]}}/breakdowns",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listAbsenceTypes",
+      "method": "GET",
+      "path": "/absence-types",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listAbsenceTypes",
+        "method": "GET",
+        "path": "/absence-types",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/absence-types",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "updateAbsencePeriod",
+      "method": "PATCH",
+      "path": "/absence-periods/{id}",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "absence_type_id",
+            "inputName": "absence_type_id",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "end_date",
+            "inputName": "end_date",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "person_id",
+            "inputName": "person_id",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "start_date",
+            "inputName": "start_date",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "end_date",
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "name": "person_id",
+            "type": "string"
+          },
+          {
+            "name": "start_date",
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "status",
+            "type": "string"
+          }
+        ],
+        "simplifiedFields": [
+          "end_date",
+          "id",
+          "person_id",
+          "start_date",
+          "status"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "updateAbsencePeriod",
+        "method": "PATCH",
+        "path": "/absence-periods/{id}",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "PATCH",
+          "url": "=/absence-periods/{{$parameter[\"id\"]}}",
+          "query": [],
+          "body": [
+            {
+              "name": "absence_type_id",
+              "source": "additionalFields"
+            },
+            {
+              "name": "end_date",
+              "source": "additionalFields"
+            },
+            {
+              "name": "person_id",
+              "source": "additionalFields"
+            },
+            {
+              "name": "start_date",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "end_date",
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "name": "id",
+              "type": "string"
+            },
+            {
+              "name": "person_id",
+              "type": "string"
+            },
+            {
+              "name": "start_date",
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "name": "status",
+              "type": "string"
+            }
+          ],
+          "simplifiedFields": [
+            "end_date",
+            "id",
+            "person_id",
+            "start_date",
+            "status"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "createAttendancePeriod",
+      "method": "POST",
+      "path": "/attendance-periods",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "end",
+            "inputName": "end",
+            "sample": "2026-01-01T00:00:00.000Z",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "person_id",
+            "inputName": "person_id",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "start",
+            "inputName": "start",
+            "sample": "2026-01-01T00:00:00.000Z",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "createAttendancePeriod",
+        "method": "POST",
+        "path": "/attendance-periods",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "POST",
+          "url": "=/attendance-periods",
+          "query": [],
+          "body": [
+            {
+              "name": "end",
+              "source": "additionalFields"
+            },
+            {
+              "name": "person_id",
+              "source": "additionalFields"
+            },
+            {
+              "name": "start",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "deleteAttendancePeriod",
+      "method": "DELETE",
+      "path": "/attendance-periods/{id}",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "deleteAttendancePeriod",
+        "method": "DELETE",
+        "path": "/attendance-periods/{id}",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "DELETE",
+          "url": "=/attendance-periods/{{$parameter[\"id\"]}}",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getAttendancePeriod",
+      "method": "GET",
+      "path": "/attendance-periods/{id}",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "getAttendancePeriod",
+        "method": "GET",
+        "path": "/attendance-periods/{id}",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/attendance-periods/{{$parameter[\"id\"]}}",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listAttendancePeriods",
+      "method": "GET",
+      "path": "/attendance-periods",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "data",
+            "type": "array"
+          },
+          {
+            "name": "success",
+            "type": "boolean"
+          }
+        ],
+        "simplifiedFields": [
+          "data",
+          "success"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listAttendancePeriods",
+        "method": "GET",
+        "path": "/attendance-periods",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/attendance-periods",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "data",
+              "type": "array"
+            },
+            {
+              "name": "success",
+              "type": "boolean"
+            }
+          ],
+          "simplifiedFields": [
+            "data",
+            "success"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "updateAttendancePeriod",
+      "method": "PATCH",
+      "path": "/attendance-periods/{id}",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "end",
+            "inputName": "end",
+            "sample": "2026-01-01T00:00:00.000Z",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "person_id",
+            "inputName": "person_id",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "start",
+            "inputName": "start",
+            "sample": "2026-01-01T00:00:00.000Z",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "updateAttendancePeriod",
+        "method": "PATCH",
+        "path": "/attendance-periods/{id}",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "PATCH",
+          "url": "=/attendance-periods/{{$parameter[\"id\"]}}",
+          "query": [],
+          "body": [
+            {
+              "name": "end",
+              "source": "additionalFields"
+            },
+            {
+              "name": "person_id",
+              "source": "additionalFields"
+            },
+            {
+              "name": "start",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "createAccessToken",
+      "method": "POST",
+      "path": "/auth/token",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "client_id",
+            "inputName": "client_id",
+            "sample": "value/id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "client_secret",
+            "inputName": "client_secret",
+            "sample": "value/id",
+            "type": "string",
+            "required": true
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "data",
+            "type": "object"
+          },
+          {
+            "name": "success",
+            "type": "boolean"
+          }
+        ],
+        "simplifiedFields": [
+          "data",
+          "success"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Invalid credentials"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "createAccessToken",
+        "method": "POST",
+        "path": "/auth/token",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "POST",
+          "url": "=/auth/token",
+          "query": [],
+          "body": [
+            {
+              "name": "client_id",
+              "source": "parameter"
+            },
+            {
+              "name": "client_secret",
+              "source": "parameter"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "data",
+              "type": "object"
+            },
+            {
+              "name": "success",
+              "type": "boolean"
+            }
+          ],
+          "simplifiedFields": [
+            "data",
+            "success"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Invalid credentials"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "revokeAccessToken",
+      "method": "POST",
+      "path": "/auth/revoke",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "revokeAccessToken",
+        "method": "POST",
+        "path": "/auth/revoke",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "POST",
+          "url": "=/auth/revoke",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "createCompensation",
+      "method": "POST",
+      "path": "/compensations",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "amount",
+            "inputName": "amount",
+            "sample": 2.5,
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "currency",
+            "inputName": "currency",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "person_id",
+            "inputName": "person_id",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "createCompensation",
+        "method": "POST",
+        "path": "/compensations",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "POST",
+          "url": "=/compensations",
+          "query": [],
+          "body": [
+            {
+              "name": "amount",
+              "source": "additionalFields"
+            },
+            {
+              "name": "currency",
+              "source": "additionalFields"
+            },
+            {
+              "name": "person_id",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "createCompensationType",
+      "method": "POST",
+      "path": "/compensations/types",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "raw",
+        "fields": [
+          {
+            "name": "bodyJson",
+            "inputName": "bodyJson",
+            "sample": {},
+            "type": "object",
+            "required": true
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "createCompensationType",
+        "method": "POST",
+        "path": "/compensations/types",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "POST",
+          "url": "=/compensations/types",
+          "query": [],
+          "body": [
+            {
+              "name": "bodyJson",
+              "source": "parameter"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": [
+          "raw or blocked request body",
+          "advanced parameter bodyJson"
+        ]
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listCompensationTypes",
+      "method": "GET",
+      "path": "/compensations/types",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listCompensationTypes",
+        "method": "GET",
+        "path": "/compensations/types",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/compensations/types",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listCompensations",
+      "method": "GET",
+      "path": "/compensations",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listCompensations",
+        "method": "GET",
+        "path": "/compensations",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/compensations",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "downloadDocument",
+      "method": "GET",
+      "path": "/document-management/documents/{id}/download",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "downloadDocument",
+        "method": "GET",
+        "path": "/document-management/documents/{id}/download",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/document-management/documents/{{$parameter[\"id\"]}}/download",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listDocuments",
+      "method": "GET",
+      "path": "/document-management/documents",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listDocuments",
+        "method": "GET",
+        "path": "/document-management/documents",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/document-management/documents",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "updateEmployment",
+      "method": "PATCH",
+      "path": "/persons/{person-id}/employments/{employment-id}",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "person-id",
+          "inputName": "person-id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        },
+        {
+          "name": "employment-id",
+          "inputName": "employment-id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "position",
+            "inputName": "position",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "start_date",
+            "inputName": "start_date",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "data",
+            "type": "object"
+          },
+          {
+            "name": "success",
+            "type": "boolean"
+          }
+        ],
+        "simplifiedFields": [
+          "data",
+          "success"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "updateEmployment",
+        "method": "PATCH",
+        "path": "/persons/{person-id}/employments/{employment-id}",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "PATCH",
+          "url": "=/persons/{{$parameter[\"person-id\"]}}/employments/{{$parameter[\"employment-id\"]}}",
+          "query": [],
+          "body": [
+            {
+              "name": "position",
+              "source": "additionalFields"
+            },
+            {
+              "name": "start_date",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "data",
+              "type": "object"
+            },
+            {
+              "name": "success",
+              "type": "boolean"
+            }
+          ],
+          "simplifiedFields": [
+            "data",
+            "success"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listLegalEntities",
+      "method": "GET",
+      "path": "/legal-entities",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listLegalEntities",
+        "method": "GET",
+        "path": "/legal-entities",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/legal-entities",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listOrgUnits",
+      "method": "GET",
+      "path": "/org-units",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listOrgUnits",
+        "method": "GET",
+        "path": "/org-units",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/org-units",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "createPerson",
+      "method": "POST",
+      "path": "/persons",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "email",
+            "inputName": "email",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "first_name",
+            "inputName": "first_name",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "last_name",
+            "inputName": "last_name",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "data",
+            "type": "object"
+          },
+          {
+            "name": "success",
+            "type": "boolean"
+          }
+        ],
+        "simplifiedFields": [
+          "data",
+          "success"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "createPerson",
+        "method": "POST",
+        "path": "/persons",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "POST",
+          "url": "=/persons",
+          "query": [],
+          "body": [
+            {
+              "name": "email",
+              "source": "additionalFields"
+            },
+            {
+              "name": "first_name",
+              "source": "additionalFields"
+            },
+            {
+              "name": "last_name",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "data",
+              "type": "object"
+            },
+            {
+              "name": "success",
+              "type": "boolean"
+            }
+          ],
+          "simplifiedFields": [
+            "data",
+            "success"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "deletePerson",
+      "method": "DELETE",
+      "path": "/persons/{person-id}",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "person-id",
+          "inputName": "person-id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "deletePerson",
+        "method": "DELETE",
+        "path": "/persons/{person-id}",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "DELETE",
+          "url": "=/persons/{{$parameter[\"person-id\"]}}",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "updatePerson",
+      "method": "PATCH",
+      "path": "/persons/{person-id}",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "person-id",
+          "inputName": "person-id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "email",
+            "inputName": "email",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "first_name",
+            "inputName": "first_name",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "last_name",
+            "inputName": "last_name",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "data",
+            "type": "object"
+          },
+          {
+            "name": "success",
+            "type": "boolean"
+          }
+        ],
+        "simplifiedFields": [
+          "data",
+          "success"
+        ]
+      },
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "updatePerson",
+        "method": "PATCH",
+        "path": "/persons/{person-id}",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "PATCH",
+          "url": "=/persons/{{$parameter[\"person-id\"]}}",
+          "query": [],
+          "body": [
+            {
+              "name": "email",
+              "source": "additionalFields"
+            },
+            {
+              "name": "first_name",
+              "source": "additionalFields"
+            },
+            {
+              "name": "last_name",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {
+          "fields": [
+            {
+              "name": "data",
+              "type": "object"
+            },
+            {
+              "name": "success",
+              "type": "boolean"
+            }
+          ],
+          "simplifiedFields": [
+            "data",
+            "success"
+          ]
+        },
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "addProjectMembers",
+      "method": "POST",
+      "path": "/projects/{id}/members",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "member_ids",
+            "inputName": "member_ids",
+            "sample": [
+              "value/id"
+            ],
+            "type": "array",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "addProjectMembers",
+        "method": "POST",
+        "path": "/projects/{id}/members",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "POST",
+          "url": "=/projects/{{$parameter[\"id\"]}}/members",
+          "query": [],
+          "body": [
+            {
+              "name": "member_ids",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": [
+          "advanced parameter member_ids"
+        ]
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "createProject",
+      "method": "POST",
+      "path": "/projects",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "description",
+            "inputName": "description",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "name",
+            "inputName": "name",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "createProject",
+        "method": "POST",
+        "path": "/projects",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "POST",
+          "url": "=/projects",
+          "query": [],
+          "body": [
+            {
+              "name": "description",
+              "source": "additionalFields"
+            },
+            {
+              "name": "name",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listProjectMembers",
+      "method": "GET",
+      "path": "/projects/{id}/members",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listProjectMembers",
+        "method": "GET",
+        "path": "/projects/{id}/members",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/projects/{{$parameter[\"id\"]}}/members",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listProjects",
+      "method": "GET",
+      "path": "/projects",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listProjects",
+        "method": "GET",
+        "path": "/projects",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/projects",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "removeProjectMembers",
+      "method": "DELETE",
+      "path": "/projects/{id}/members",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "removeProjectMembers",
+        "method": "DELETE",
+        "path": "/projects/{id}/members",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "DELETE",
+          "url": "=/projects/{{$parameter[\"id\"]}}/members",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listApplications",
+      "method": "GET",
+      "path": "/recruiting/applications",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listApplications",
+        "method": "GET",
+        "path": "/recruiting/applications",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/recruiting/applications",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listCandidates",
+      "method": "GET",
+      "path": "/recruiting/candidates",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listCandidates",
+        "method": "GET",
+        "path": "/recruiting/candidates",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/recruiting/candidates",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listJobCategories",
+      "method": "GET",
+      "path": "/recruiting/categories",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listJobCategories",
+        "method": "GET",
+        "path": "/recruiting/categories",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/recruiting/categories",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listJobs",
+      "method": "GET",
+      "path": "/recruiting/jobs",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listJobs",
+        "method": "GET",
+        "path": "/recruiting/jobs",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/recruiting/jobs",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getReport",
+      "method": "GET",
+      "path": "/reports/{id}",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "getReport",
+        "method": "GET",
+        "path": "/reports/{id}",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/reports/{{$parameter[\"id\"]}}",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listReports",
+      "method": "GET",
+      "path": "/reports",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listReports",
+        "method": "GET",
+        "path": "/reports",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/reports",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "createWebhook",
+      "method": "POST",
+      "path": "/webhooks",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "events",
+            "inputName": "events",
+            "sample": [
+              "value/id"
+            ],
+            "type": "array",
+            "required": false
+          },
+          {
+            "name": "url",
+            "inputName": "url",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "createWebhook",
+        "method": "POST",
+        "path": "/webhooks",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "POST",
+          "url": "=/webhooks",
+          "query": [],
+          "body": [
+            {
+              "name": "events",
+              "source": "additionalFields"
+            },
+            {
+              "name": "url",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": [
+          "advanced parameter events"
+        ]
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "deleteWebhook",
+      "method": "DELETE",
+      "path": "/webhooks/{id}",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "deleteWebhook",
+        "method": "DELETE",
+        "path": "/webhooks/{id}",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "DELETE",
+          "url": "=/webhooks/{{$parameter[\"id\"]}}",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "getWebhookEvents",
+      "method": "GET",
+      "path": "/webhooks/{id}/events",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "getWebhookEvents",
+        "method": "GET",
+        "path": "/webhooks/{id}/events",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/webhooks/{{$parameter[\"id\"]}}/events",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "listWebhooks",
+      "method": "GET",
+      "path": "/webhooks",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": []
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "listWebhooks",
+        "method": "GET",
+        "path": "/webhooks",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "GET",
+          "url": "=/webhooks",
+          "query": [],
+          "body": [],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": []
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    },
+    {
+      "operationId": "updateWebhook",
+      "method": "PATCH",
+      "path": "/webhooks/{id}",
+      "serverId": "documentServer1HttpsApiPersonioDeV2",
+      "authentication": [
+        {
+          "schemes": [
+            "bearerAuth"
+          ],
+          "scopes": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "inputName": "id",
+          "sample": "value/id",
+          "location": "path",
+          "required": true,
+          "arrayFormat": "indices"
+        }
+      ],
+      "request": {
+        "contentType": "application/json",
+        "representation": "structured",
+        "fields": [
+          {
+            "name": "events",
+            "inputName": "events",
+            "sample": [
+              "value/id"
+            ],
+            "type": "array",
+            "required": false
+          },
+          {
+            "name": "url",
+            "inputName": "url",
+            "sample": "value/id",
+            "type": "string",
+            "required": false
+          }
+        ]
+      },
+      "retry": {},
+      "pagination": {
+        "style": "none"
+      },
+      "response": {},
+      "errors": [
+        {
+          "status": "400",
+          "title": "Bad request"
+        },
+        {
+          "status": "401",
+          "title": "Unauthorized"
+        }
+      ],
+      "requestPlan": {
+        "operationId": "updateWebhook",
+        "method": "PATCH",
+        "path": "/webhooks/{id}",
+        "serverId": "documentServer1HttpsApiPersonioDeV2",
+        "request": {
+          "method": "PATCH",
+          "url": "=/webhooks/{{$parameter[\"id\"]}}",
+          "query": [],
+          "body": [
+            {
+              "name": "events",
+              "source": "additionalFields"
+            },
+            {
+              "name": "url",
+              "source": "additionalFields"
+            }
+          ],
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          }
+        },
+        "authentication": [
+          {
+            "schemes": [
+              "bearerAuth"
+            ],
+            "scopes": []
+          }
+        ],
+        "retry": {},
+        "pagination": {
+          "style": "none"
+        },
+        "response": {},
+        "errors": [
+          {
+            "status": "400",
+            "title": "Bad request"
+          },
+          {
+            "status": "401",
+            "title": "Unauthorized"
+          }
+        ],
+        "unsupportedSemantics": [
+          "advanced parameter events"
+        ]
+      },
+      "assertions": [
+        "retry attempts preserve request and pagination state until a response succeeds",
+        "pagination advances only after a completed page response",
+        "pagination terminates within declared page, item, elapsed-time, memory, repeated-cursor, and repeated-page budgets"
+      ]
+    }
+  ],
+  "triggerFixtures": [
+    {
+      "operationId": "getAbsencePeriod",
+      "trigger": {
+        "type": "polling",
+        "sourceOperation": "getAbsencePeriod",
+        "cursorParameter": "id",
+        "defaultPollInterval": "5m"
+      },
+      "assertions": [
+        "polling trigger cursor, advancement, first-poll, empty-result, restart, deduplication, deduplication-retention, state-scope, and item-linking behavior follow the declared Trigger Contract"
+      ]
+    },
+    {
+      "operationId": "listAbsencePeriods",
+      "trigger": {
+        "type": "polling",
+        "sourceOperation": "listAbsencePeriods",
+        "cursorParameter": "id",
+        "defaultPollInterval": "5m"
+      },
+      "assertions": [
+        "polling trigger cursor, advancement, first-poll, empty-result, restart, deduplication, deduplication-retention, state-scope, and item-linking behavior follow the declared Trigger Contract"
+      ]
+    },
+    {
+      "operationId": "getEmployment",
+      "trigger": {
+        "type": "polling",
+        "sourceOperation": "getEmployment",
+        "cursorParameter": "id",
+        "defaultPollInterval": "5m"
+      },
+      "assertions": [
+        "polling trigger cursor, advancement, first-poll, empty-result, restart, deduplication, deduplication-retention, state-scope, and item-linking behavior follow the declared Trigger Contract"
+      ]
+    },
+    {
+      "operationId": "listEmployments",
+      "trigger": {
+        "type": "polling",
+        "sourceOperation": "listEmployments",
+        "cursorParameter": "id",
+        "defaultPollInterval": "5m"
+      },
+      "assertions": [
+        "polling trigger cursor, advancement, first-poll, empty-result, restart, deduplication, deduplication-retention, state-scope, and item-linking behavior follow the declared Trigger Contract"
+      ]
+    },
+    {
+      "operationId": "getPerson",
+      "trigger": {
+        "type": "polling",
+        "sourceOperation": "getPerson",
+        "cursorParameter": "created_at",
+        "defaultPollInterval": "5m"
+      },
+      "assertions": [
+        "polling trigger cursor, advancement, first-poll, empty-result, restart, deduplication, deduplication-retention, state-scope, and item-linking behavior follow the declared Trigger Contract"
+      ]
+    },
+    {
+      "operationId": "listPersons",
+      "trigger": {
+        "type": "polling",
+        "sourceOperation": "listPersons",
+        "cursorParameter": "created_at",
+        "defaultPollInterval": "5m"
+      },
+      "assertions": [
+        "polling trigger cursor, advancement, first-poll, empty-result, restart, deduplication, deduplication-retention, state-scope, and item-linking behavior follow the declared Trigger Contract"
+      ]
+    }
+  ]
+}
